@@ -9,7 +9,11 @@ function compilesass() {
     .pipe(gulp.dest('dist/css'));
 }
 
+function watchfiles() {
+  gulp.watch(sassfiles, ['sass']);
+}
+
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', compilesass);
-gulp.task('watch', gulp.watch(sassfiles).on('change'), sass);
+gulp.task('watch', watchfiles);
 gulp.task('default', sass);
