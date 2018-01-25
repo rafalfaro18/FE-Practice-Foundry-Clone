@@ -1,0 +1,22 @@
+{
+  "name": "fe-practice-foundry-clone",
+  "description": "Front End Practice: Recreating this page http://foundry.mediumra.re/home-adventure.html",
+  "main": "index.js",
+  "authors": [
+    "rafalfaro18"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/rafalfaro18/FE-Practice-Foundry-Clone",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "bootstrap": "^4.0.0"
+  }
+}
