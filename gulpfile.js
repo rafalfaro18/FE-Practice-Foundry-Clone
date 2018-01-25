@@ -5,7 +5,7 @@ const sassfiles = 'src/scss/**/*.scss';
 
 function compilesass() {
   return gulp.src(sassfiles)
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
     .pipe(gulp.dest('dist/css'));
 }
 
