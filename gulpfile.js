@@ -32,4 +32,5 @@ gulp.task('sass', compilesass);
 gulp.task('pug', compilepug);
 gulp.task('watch:sass', watchsass);
 gulp.task('watch:pug', watchpug);
+gulp.task('watch', ['watch:pug', 'watch:sass']);
 gulp.task('default', ['sass', 'pug']);
