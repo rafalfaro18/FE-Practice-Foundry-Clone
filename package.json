@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/rafalfaro18/FE-Practice-Foundry-Clone#readme",
   "devDependencies": {
+    "bower": "^1.8.2",
     "gulp": "^3.9.1"
   }
 }
