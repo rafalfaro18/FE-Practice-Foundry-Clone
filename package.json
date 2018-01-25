@@ -1,0 +1,19 @@
+{
+  "name": "fe-practice-foundry-clone",
+  "version": "1.0.0",
+  "description": "Front End Practice: Recreating this page http://foundry.mediumra.re/home-adventure.html",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafalfaro18/FE-Practice-Foundry-Clone.git"
+  },
+  "author": "rafalfaro18",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafalfaro18/FE-Practice-Foundry-Clone/issues"
+  },
+  "homepage": "https://github.com/rafalfaro18/FE-Practice-Foundry-Clone#readme"
+}
