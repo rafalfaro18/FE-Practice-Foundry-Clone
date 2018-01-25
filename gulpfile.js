@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const pug = require('gulp-pug');
+const browserSync = require('browser-sync').create();
 
 const sassfiles = 'src/scss/**/*.scss';
 const pugfiles = 'src/templates/*.pug';
@@ -25,10 +26,23 @@ function compilepug() {
     .pipe(gulp.dest('dist'));
 }
 
+function syncbrowser() {
+  browserSync.init({
+    server: {
+      baseDir: 'dist',
+    },
+  });
+  watchsass();
+  watchpug();
+  gulp.watch('dist/**/**').on('change', browserSync.reload);
+}
+
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', compilesass);
 gulp.task('pug', compilepug);
 gulp.task('watch:sass', watchsass);
 gulp.task('watch:pug', watchpug);
 gulp.task('watch', ['watch:pug', 'watch:sass']);
-gulp.task('default', ['sass', 'pug']);
+gulp.task('serve', syncbrowser);
+gulp.task('default', ['serve']);
+gulp.task('build', ['sass', 'pug']);
