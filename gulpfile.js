@@ -27,6 +27,8 @@ function compilepug() {
 }
 
 function syncbrowser() {
+  compilepug();
+  compilesass();
   browserSync.init({
     server: {
       baseDir: 'dist',
