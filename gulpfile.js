@@ -21,9 +21,7 @@ function watchpug() {
 
 function compilepug() {
   return gulp.src(pugfiles)
-    .pipe(pug({
-      // Your options in here.
-    }))
+    .pipe(pug())
     .pipe(gulp.dest('dist'));
 }
 
