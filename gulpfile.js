@@ -1,7 +1,9 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
+const pug = require('gulp-pug');
 
 const sassfiles = 'src/scss/**/*.scss';
+const pugfiles = 'src/templates/**/*.pug';
 
 function compilesass() {
   return gulp.src(sassfiles)
@@ -9,11 +11,25 @@ function compilesass() {
     .pipe(gulp.dest('dist/css'));
 }
 
-function watchfiles() {
+function watchsass() {
   gulp.watch(sassfiles, ['sass']);
+}
+
+function watchpug() {
+  gulp.watch(pugfiles, ['pug']);
+}
+
+function compilepug() {
+  return gulp.src(pugfiles)
+    .pipe(pug({
+      // Your options in here.
+    }))
+    .pipe(gulp.dest('dist'));
 }
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', compilesass);
-gulp.task('watch', watchfiles);
-gulp.task('default', sass);
+gulp.task('pug', compilepug);
+gulp.task('watch:sass', watchsass);
+gulp.task('watch:pug', watchpug);
+gulp.task('default', ['sass', 'pug']);
