@@ -20,6 +20,7 @@
     "bower": "^1.8.2",
     "browser-sync": "^2.23.6",
     "gulp": "^3.9.1",
+    "gulp-clean": "^0.4.0",
     "gulp-pug": "^3.3.0",
     "gulp-sass": "^3.1.0",
     "pug": "^2.0.0-rc.4"
