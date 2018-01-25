@@ -16,7 +16,7 @@ function watchsass() {
 }
 
 function watchpug() {
-  gulp.watch(pugfiles, ['pug']);
+  gulp.watch('src/templates/**/*.pug', ['pug']);
 }
 
 function compilepug() {
