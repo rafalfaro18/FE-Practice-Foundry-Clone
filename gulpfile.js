@@ -3,7 +3,7 @@ const sass = require('gulp-sass');
 const pug = require('gulp-pug');
 
 const sassfiles = 'src/scss/**/*.scss';
-const pugfiles = 'src/templates/**/*.pug';
+const pugfiles = 'src/templates/*.pug';
 
 function compilesass() {
   return gulp.src(sassfiles)
