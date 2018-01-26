@@ -2,12 +2,26 @@ doctype html
 html
   include includes/head.pug
   body
-    div.container
-      div.row
-        div.col.col-md-6
-          h1 FOUNDRY
+    nav.navbar.navbar-expand-sm.navbar-light.bg-light
+      a.navbar-brand(href="#") FOUNDRY
+      button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+        span.navbar-toggler-icon
+      div#navbarSupportedContent.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li.nav-item.active 
+            a.nav-link(href="#") HOME
+          li.nav-item 
+            a.nav-link(href="#") PAGES
+          li.nav-item 
+            a.nav-link(href="#") ELEMENTS
+          li.nav-item 
+            a.nav-link(href="#") PORTFOLIO
+          li.nav-item 
+            a.nav-link(href="#") SHOP
+          li.nav-item 
+            a.nav-link(href="#") BLOG
     div.container
       div.row
         div.col-md-6    
-        p ADVENTURE TRAVEL WITH HEART
+          p ADVENTURE TRAVEL WITH HEART
     include includes/footer.pug
