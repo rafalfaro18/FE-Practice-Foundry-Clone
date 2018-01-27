@@ -32,10 +32,10 @@ function syncbrowser() {
   compilesass();
   browserSync.init({
     server: {
-      baseDir: "dist",
-    routes: {
-        "/bower_components": "bower_components"
-    }
+      baseDir: 'dist',
+      routes: {
+        '/bower_components': 'bower_components',
+      },
     },
   });
   watchsass();
