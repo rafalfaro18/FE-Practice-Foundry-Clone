@@ -7,7 +7,6 @@ const imagemin = require('gulp-imagemin');
 
 const sassfiles = 'src/scss/**/*.scss';
 const pugfiles = 'src/templates/*.pug';
-const imagefiles = 'src/img/**/*.*';
 
 function compilesass() {
   return gulp.src(sassfiles)
@@ -30,13 +29,13 @@ function compilepug() {
 }
 
 function watchimg() {
-  gulp.watch(imagefiles, ['img']);
+  gulp.watch('src/img/**/*.*', ['img']);
 }
 
 function compileimg() {
-  return gulp.src(imagefiles)
+  return gulp.src('src/img/**/*.*')
     .pipe(imagemin())
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('dist/img/'));
 }
 
 function syncbrowser() {
