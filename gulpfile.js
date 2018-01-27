@@ -8,7 +8,13 @@ const imagemin = require('gulp-imagemin');
 const sassfiles = 'src/scss/**/*.scss';
 const pugfiles = 'src/templates/*.pug';
 
+function cleandist() {
+  return gulp.src('dist', { read: false })
+    .pipe(clean());
+}
+
 function compilesass() {
+  cleandist();
   return gulp.src(sassfiles)
     .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
     .pipe(gulp.dest('dist/css'));
@@ -23,6 +29,7 @@ function watchpug() {
 }
 
 function compilepug() {
+  cleandist();
   return gulp.src(pugfiles)
     .pipe(pug())
     .pipe(gulp.dest('dist'));
@@ -33,6 +40,7 @@ function watchimg() {
 }
 
 function compileimg() {
+  cleandist();
   return gulp.src('src/img/**/*.*')
     .pipe(imagemin())
     .pipe(gulp.dest('dist/img/'));
@@ -52,12 +60,8 @@ function syncbrowser() {
   });
   watchsass();
   watchpug();
+  watchimg();
   gulp.watch('dist/**/**').on('change', browserSync.reload);
-}
-
-function cleandist() {
-  return gulp.src('dist', { read: false })
-    .pipe(clean());
 }
 
 // Compile sass into CSS & auto-inject into browsers
