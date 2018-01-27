@@ -3,9 +3,11 @@ const sass = require('gulp-sass');
 const pug = require('gulp-pug');
 const browserSync = require('browser-sync').create();
 const clean = require('gulp-clean');
+const imagemin = require('gulp-imagemin');
 
 const sassfiles = 'src/scss/**/*.scss';
 const pugfiles = 'src/templates/*.pug';
+const imagefiles = 'src/img/**/*.*';
 
 function compilesass() {
   return gulp.src(sassfiles)
@@ -27,9 +29,20 @@ function compilepug() {
     .pipe(gulp.dest('dist'));
 }
 
+function watchimg() {
+  gulp.watch(imagefiles, ['img']);
+}
+
+function compileimg() {
+  return gulp.src(imagefiles)
+    .pipe(imagemin())
+    .pipe(gulp.dest('dist'));
+}
+
 function syncbrowser() {
   compilepug();
   compilesass();
+  compileimg();
   browserSync.init({
     server: {
       baseDir: 'dist',
@@ -51,10 +64,12 @@ function cleandist() {
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', compilesass);
 gulp.task('pug', compilepug);
+gulp.task('img', compileimg);
 gulp.task('watch:sass', watchsass);
 gulp.task('watch:pug', watchpug);
-gulp.task('watch', ['watch:pug', 'watch:sass']);
+gulp.task('watch:img', watchimg);
+gulp.task('watch', ['watch:pug', 'watch:sass', 'watch:img']);
 gulp.task('serve', syncbrowser);
 gulp.task('default', ['serve']);
 gulp.task('clean', cleandist);
-gulp.task('build', ['sass', 'pug']);
+gulp.task('build', ['sass', 'pug', 'img']);
