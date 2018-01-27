@@ -38,6 +38,8 @@ function watchimg() {
 }
 
 function compileimg() {
+  gulp.src('dist/img', { read: false })
+    .pipe(clean());
   return gulp.src('src/img/*')
     .pipe(imagemin())
     .pipe(gulp.dest('dist/img'));
