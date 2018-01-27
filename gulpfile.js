@@ -14,7 +14,6 @@ function cleandist() {
 }
 
 function compilesass() {
-  cleandist();
   return gulp.src(sassfiles)
     .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
     .pipe(gulp.dest('dist/css'));
@@ -29,7 +28,6 @@ function watchpug() {
 }
 
 function compilepug() {
-  cleandist();
   return gulp.src(pugfiles)
     .pipe(pug())
     .pipe(gulp.dest('dist'));
@@ -40,10 +38,9 @@ function watchimg() {
 }
 
 function compileimg() {
-  cleandist();
-  return gulp.src('src/img/**/*.*')
+  return gulp.src('src/img/*')
     .pipe(imagemin())
-    .pipe(gulp.dest('dist/img/'));
+    .pipe(gulp.dest('dist/img'));
 }
 
 function syncbrowser() {
