@@ -2,30 +2,7 @@ doctype html
 html
   include includes/head.pug
   body
-    nav.navbar.navbar-expand-sm.navbar-light.bg-light
-      a.navbar-brand(href="#") FOUNDRY
-      button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
-        span.navbar-toggler-icon
-      div#navbarSupportedContent.collapse.navbar-collapse
-        ul.navbar-nav.mr-auto
-          li.nav-item.active 
-            a.nav-link(href="#") HOME
-              i.fa.fa-angle-down
-          li.nav-item 
-            a.nav-link(href="#") PAGES
-              i.fa.fa-angle-down
-          li.nav-item 
-            a.nav-link(href="#") ELEMENTS
-              i.fa.fa-angle-down
-          li.nav-item 
-            a.nav-link(href="#") PORTFOLIO
-              i.fa.fa-angle-down
-          li.nav-item 
-            a.nav-link(href="#") SHOP
-              i.fa.fa-angle-down
-          li.nav-item 
-            a.nav-link(href="#") BLOG
-              i.fa.fa-angle-down
+    include includes/navigation-top.pug
     div.container
       div.row
         div.col-md-6    
