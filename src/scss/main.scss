@@ -3,12 +3,12 @@ $borderstyle: transparentize($white, 0.75) solid 1px;
 
 @font-face {
     font-family: 'Good Foot';
-    src: url('GoodFoot.eot');
-    src: url('GoodFoot.eot?#iefix') format('embedded-opentype'),
-        url('GoodFoot.woff2') format('woff2'),
-        url('GoodFoot.woff') format('woff'),
-        url('GoodFoot.ttf') format('truetype'),
-        url('GoodFoot.svg#GoodFoot') format('svg');
+    src: url('fonts/GoodFoot.eot');
+    src: url('fonts/GoodFoot.eot?#iefix') format('embedded-opentype'),
+        url('fonts/GoodFoot.woff2') format('woff2'),
+        url('fonts/GoodFoot.woff') format('woff'),
+        url('fonts/GoodFoot.ttf') format('truetype'),
+        url('fonts/GoodFoot.svg#GoodFoot') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -55,7 +55,7 @@ nav.navbar.fixed-top {
 }
 
 .gf {
-    font-family: "Good Foot", 'Times New Roman', serif;
+    font-family: "Good Foot", 'Arial', serif;
     font-size: 100px;
 }
 
