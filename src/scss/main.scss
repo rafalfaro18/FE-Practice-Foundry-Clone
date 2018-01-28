@@ -2,7 +2,7 @@ $white: #fff;
 $borderstyle: transparentize($white, 0.75) solid 1px;
 
 @font-face {
-	font-family: "Goodfoot";
+	font-family: "Good Foot";
 	font-style: normal;
 	src: url("fonts/goodfoot.ttf") format("truetype"),
 }
@@ -49,6 +49,6 @@ nav.navbar.fixed-top {
 }
 
 .gf {
-    font-family: "Goodfoot", 'Times New Roman', serif;
+    font-family: "Good Foot", 'Times New Roman', serif;
 }
 
