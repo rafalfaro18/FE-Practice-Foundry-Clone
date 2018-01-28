@@ -93,5 +93,13 @@ nav.navbar.fixed-top {
 .gf {
     font-family: "Good Foot", 'Arial', serif;
     font-size: 100px;
+
+    @include screen(med-small){
+        font-size: 85px;
+    }
+
+    @include screen(small) {
+        font-size: 70px;
+    }
 }
 
