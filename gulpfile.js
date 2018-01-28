@@ -45,10 +45,22 @@ function compileimg() {
     .pipe(gulp.dest('dist/img'));
 }
 
+function watchfonts() {
+  gulp.watch('src/fonts/**/*.*', ['fonts']);
+}
+
+function compilefonts() {
+  gulp.src('dist/fonts', { read: false })
+    .pipe(clean());
+  return gulp.src('src/fonts/*')
+    .pipe(gulp.dest('dist/fonts'));
+}
+
 function syncbrowser() {
   compilepug();
   compilesass();
   compileimg();
+  compilefonts();
   browserSync.init({
     server: {
       baseDir: 'dist',
@@ -60,6 +72,7 @@ function syncbrowser() {
   watchsass();
   watchpug();
   watchimg();
+  watchfonts();
   gulp.watch('dist/**/**').on('change', browserSync.reload);
 }
 
@@ -67,11 +80,13 @@ function syncbrowser() {
 gulp.task('sass', compilesass);
 gulp.task('pug', compilepug);
 gulp.task('img', compileimg);
+gulp.task('fonts', compilefonts);
 gulp.task('watch:sass', watchsass);
 gulp.task('watch:pug', watchpug);
 gulp.task('watch:img', watchimg);
-gulp.task('watch', ['watch:pug', 'watch:sass', 'watch:img']);
+gulp.task('watch:fonts', watchfonts);
+gulp.task('watch', ['watch:pug', 'watch:sass', 'watch:img', 'watch:fonts']);
 gulp.task('serve', syncbrowser);
 gulp.task('default', ['serve']);
 gulp.task('clean', cleandist);
-gulp.task('build', ['sass', 'pug', 'img']);
+gulp.task('build', ['sass', 'pug', 'img', 'fonts']);
