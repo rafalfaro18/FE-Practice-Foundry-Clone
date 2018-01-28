@@ -2,9 +2,15 @@ $white: #fff;
 $borderstyle: transparentize($white, 0.75) solid 1px;
 
 @font-face {
-	font-family: "Good Foot";
-	font-style: normal;
-	src: url("fonts/goodfoot.ttf") format("truetype"),
+    font-family: 'Good Foot';
+    src: url('GoodFoot.eot');
+    src: url('GoodFoot.eot?#iefix') format('embedded-opentype'),
+        url('GoodFoot.woff2') format('woff2'),
+        url('GoodFoot.woff') format('woff'),
+        url('GoodFoot.ttf') format('truetype'),
+        url('GoodFoot.svg#GoodFoot') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
 body, html {
